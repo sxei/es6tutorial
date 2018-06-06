@@ -169,6 +169,7 @@
 				$('html, body').animate({
 					scrollTop: header.offset().top
 				}, 200);
+				history.pushState(null, null, '#' + location.hash.split('#')[1] + '#' + this.innerHTML);
 			});
 			$('.markdown-nav-btn > .fa').on('click', function()
 			{
