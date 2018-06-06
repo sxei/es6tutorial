@@ -15,7 +15,7 @@
 	 	 */
 		getMarkdownTOC: function()
 		{
-			let currentHash = location.hash;
+			let currentHash = location.pathname + location.hash;
 			// list存放[[标题层级，标题ID，标题名称]]
 			var list = [], elements = this.find('h1,h2,h3,h4,h5,h6');
 			if(elements.length == 0) return '';
@@ -163,6 +163,13 @@
 						'</div>';
 			$('.markdown-nav-wrapper').remove();
 			this.append(html);
+			$('.markdown-nav-wrapper a').click(function(e){
+				e.preventDefault();
+				var header = $('#'+this.innerHTML);
+				$('html, body').animate({
+					scrollTop: header.offset().top
+				}, 200);
+			});
 			$('.markdown-nav-btn > .fa').on('click', function()
 			{
 				var obj = $(this).parents('.markdown-nav-wrapper');
