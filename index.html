@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="app/bower_components/normalize-css/normalize.css">
   <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/markdown-toc.css">
   <title>ECMAScript 6入门</title>
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -14,6 +15,22 @@
   <script src="js/store.js"></script>
   <script src="js/ditto.js"></script>
   <script src="js/prism.js"></script>
+  <script src="js/markdown-toc.js"></script>
+  <style>
+  #sidebar ul li, #sidebar ol li {
+    font-size: 16px;
+  }
+  #content {
+    width: 1200px;
+    font-size: 16px;
+  }
+  #content code {
+    font-size: 16px;
+  }
+  #content ul li.link, #content ol li.link {
+    font-size: 16px;
+  }
+  </style>
 </head>
 <body>
   <!-- essential -->
@@ -29,6 +46,9 @@
 
   <script src="config.js"></script>
   <script>
+    setTimeout(() => {
+      $('body').initMarkdownTOC($('#content'));
+    }, 2000)
     ditto.run();
   </script>
   <noscript>

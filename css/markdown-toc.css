@@ -1,0 +1,121 @@
+/* markdown目录所有样式 */
+.markdown-toc { margin-left: -20px; }
+.markdown-toc ol { counter-reset: markdown_toc; list-style-type: none; padding-left: 20px; margin: 0;}
+.markdown-toc ol li { counter-increment: markdown_toc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* .markdown-toc ol li:before { content: counters(markdown_toc, ".") ". "; } */
+
+
+/* markdown目录导航 */
+.markdown-nav-wrapper {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    font-family: 'Microsoft Yahei';
+    font-size: 16px;
+}
+.markdown-nav-wrapper * {
+    box-sizing: border-box;
+}
+.markdown-nav-sidebar {
+    position: absolute;
+    height: 900px;
+    border-left: solid 1px #eaeaea;
+    left: 5px;
+    width: 0px;
+    background: #eaeaea;
+    border-right: solid 1px #eaeaea;
+    z-index: 10;
+}
+
+.markdown-nav-sidebar:before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #FFF;
+    border-radius: 50%;
+    border: solid 2px #ddd;
+    position: absolute;
+    left: -5px;
+}
+.markdown-nav-sidebar:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #FFF;
+    border-radius: 50%;
+    border: solid 2px #ddd;
+    position: absolute;
+    left: -5px;
+    bottom: 0px;
+}
+.markdown-nav-content {
+    background: white;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 900px;
+    overflow-y: auto;
+    border: solid 1px #ddd;
+    border-left: none;
+    padding-left: 20px;
+    position: relative;
+}
+.markdown-nav-wrapper.hide .markdown-nav-sidebar{display:none;}
+.markdown-nav-wrapper.hide .markdown-nav-content{display:none;}
+.markdown-nav-content .title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.markdown-nav-btn > .fa {
+    width: 50px;
+    height: 50px;
+    background: #ccc;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+}
+.markdown-nav-btn > .fa:active {
+    background-color: #aaa;
+}
+.markdown-nav-btn > .fa:hover {
+    background-color: #bbb;
+}
+.markdown-toc > ol > li:after {
+    content: '';
+    position: absolute;
+    z-index: 11;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    left: -19px;
+    border-radius: 50%;
+    top: 7px;
+    border: solid 2px white;
+}
+
+.markdown-toc ol li a:before {
+    content: counters(markdown_toc, ".") ". ";
+    color: black;
+}
+.markdown-toc ol li a {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: inline-block;
+    color: #337ab7;
+    text-decoration: none;
+}
+.markdown-toc ol li a:hover {
+    text-decoration: underline;
+}
+.markdown-toc ol li a.active {
+    background: #127EBA;
+    color: white;
+}
+.markdown-toc ol li { overflow: initial; position: relative; }
