@@ -165,7 +165,11 @@
 			this.append(html);
 			$('.markdown-nav-wrapper a').click(function(e){
 				e.preventDefault();
-				var header = $('#'+this.innerHTML);
+				var header = $('#'+this.innerHTML.replace(/[,，.] ?/g, '-').replace(/[()]/g, '').replace(/[ *]/g, '-'));
+				if(!header.length) {
+					console.warn(`未找到ID为${header.selector}的元素！`);
+					return;
+				}
 				$('html, body').animate({
 					scrollTop: header.offset().top
 				}, 200);
